@@ -7,6 +7,15 @@ y_data = x_data*0.1 + 0.2
 b = tf.Variable(0.)
 k = tf.Variable(0.)
 y = k*x_data + b
+'''
+使得loss最小，
+1.定义代价函数
+2.定义优化器
+3.用优化器进行优化，优化参数的值
+4.进行迭代优化使loss最小
+'''
+
+
 
 #二次代价函数
 loss = tf.reduce_mean(tf.square(y_data-y))
