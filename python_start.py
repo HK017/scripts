@@ -1915,6 +1915,40 @@ print(df)
 normalization(df)
 
 
+'''
+线程 
+一个进程中可以有多个线程
+任何进程默认会启动一个线程，称为主线程，主线程可以启动新的子线程
+
+'''
+import threading
+import time
+
+
+def run(str):
+    print('子线程（%s）启动' % threading.current_thread().name)
+
+    # 实现线程的功能
+    time.sleep(2)
+    print('打印 %s ' % str)
+    time.sleep(2)
+    print(a)
+
+    print('子线程（%s）结束' % (threading.current_thread().name))
+
+if __name__ == '__main__':
+    print('主线程（%s）启动' % threading.current_thread().name)
+
+    # 创建子线程
+    t = threading.Thread(target=run, args=('hello world'), name='rootThread')
+    t.start()
+
+    # 等待线程结束
+    t.join()
+
+
+    print('主线程（%s）结束' % threading.current_thread().name)
+
 
 
 
