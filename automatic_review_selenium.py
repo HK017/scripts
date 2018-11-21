@@ -7,13 +7,26 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException,NoAlertPresentException
+from selenium.webdriver.chrome.options import Options
 import re
 import requests
 from lxml import etree
 
-class automatic_comment(object):
+class AutomaticComment(object):
 
     def __init__(self):
+        # 代理ip
+        # self.options = Options()
+        # self.options.add_argument('--proxy-server=http://%s' % proxy)
+        # user-agent
+        # self.options.add_argument('--user-agent=%s' % ua)
+        # self.driver = webdriver.Chrome(executable_path=r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe', chrome_options=self.options)
+        # 无头请求
+        # self.options.add_argument('--headless')
+        # 验证ip和ua
+        # self.driver.get("http://httpbin.org/ip")
+        # self.driver.get("http://httpbin.org/user-agent")
+
         self.url = 'http://www.dianping.com/'
         self.driver = webdriver.Chrome(executable_path=r'C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe')
         self.wait = WebDriverWait(self.driver, 10)
@@ -259,5 +272,5 @@ class automatic_comment(object):
         win32gui.SendMessage(dialog, win32con.WM_COMMAND, 1, button)  # 按button
 
 if __name__ == '__main__':
-    comment = automatic_comment()
+    comment = AutomaticComment()
     comment.comment_to_user('15029269754', 'women.419')

@@ -1950,6 +1950,119 @@ if __name__ == '__main__':
     print('主线程（%s）结束' % threading.current_thread().name)
 
 
+# logging库的用法
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')  #设置为info级别以上的信息
+logger1 = logging.getLogger(__name__)
+logger1.info('This is a log info')
+logger1.debug('Debugging')
+logger1.warning('Warning exists')
+logger1.info('Finish')
+
+# 接下来我们首先来全面了解一下 basicConfig 的参数都有哪些：
+# filename：即日志输出的文件名，如果指定了这个信息之后，实际上会启用 FileHandler，而不再是 StreamHandler，这样日志信息便会输出到文件中了。
+# filemode：这个是指定日志文件的写入方式，有两种形式，一种是 w，一种是 a，分别代表清除后写入和追加写入。
+# format：指定日志信息的输出格式，其部分参数如下所示：
+    # %(levelno)s：打印日志级别的数值。
+    # %(levelname)s：打印日志级别的名称。
+    # %(pathname)s：打印当前执行程序的路径，其实就是sys.argv[0]。
+    # %(filename)s：打印当前执行程序名。
+    # %(funcName)s：打印日志的当前函数。
+    # %(lineno)d：打印日志的当前行号。
+    # %(asctime)s：打印日志的时间。
+    # %(thread)d：打印线程ID。
+    # %(threadName)s：打印线程名称。
+    # %(process)d：打印进程ID。
+    # %(processName)s：打印线程名称。
+    # %(module)s：打印模块名称。
+    # %(message)s：打印日志信息。
+# datefmt：指定时间的输出格式。
+# style：如果 format 参数指定了，这个参数就可以指定格式化时的占位符风格，如 %、{、$ 等。
+# level：指定日志输出的类别，程序会输出大于等于此级别的信息。
+# stream：在没有指定 filename 的时候会默认使用 StreamHandler，这时 stream 可以指定初始化的文件流。
+# handlers：可以指定日志处理时所使用的 Handlers，必须是可迭代的。
+
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='output.log',
+                    datefmt='%Y-%m-%d %H:%M:%S',
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(lineno)s - %(module)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+logger.info('info')
+logger.debug('debug')
+logger.warning('warning')
+logger.error('error')
+
+
+# 另外我们还可以使用其他的 Handler 进行日志的输出，logging 模块提供的 Handler 有：
+#
+# StreamHandler：logging.StreamHandler；日志输出到流，可以是 sys.stderr，sys.stdout 或者文件。
+# FileHandler：logging.FileHandler；日志输出到文件。
+# BaseRotatingHandler：logging.handlers.BaseRotatingHandler；基本的日志回滚方式。
+# RotatingHandler：logging.handlers.RotatingHandler；日志回滚方式，支持日志文件最大数量和日志文件回滚。
+# TimeRotatingHandler：logging.handlers.TimeRotatingHandler；日志回滚方式，在一定时间区域内回滚日志文件。
+# SocketHandler：logging.handlers.SocketHandler；远程输出日志到TCP/IP sockets。
+# DatagramHandler：logging.handlers.DatagramHandler；远程输出日志到UDP sockets。
+# SMTPHandler：logging.handlers.SMTPHandler；远程输出日志到邮件地址。
+# SysLogHandler：logging.handlers.SysLogHandler；日志输出到syslog。
+# NTEventLogHandler：logging.handlers.NTEventLogHandler；远程输出日志到Windows NT/2000/XP的事件日志。
+# MemoryHandler：logging.handlers.MemoryHandler；日志输出到内存中的指定buffer。
+# HTTPHandler：logging.handlers.HTTPHandler；通过”GET”或者”POST”远程输出到HTTP服务器。
+
+
+# 下面我们使用三个 Handler 来实现日志同时输出到控制台、文件、HTTP 服务器：
+import logging
+from logging.handlers import HTTPHandler,SMTPHandler
+import sys
+
+logger = logging.getlogger()
+logger.setLevel(level=logging.DEBUG)
+
+# StreamHandler
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setLevel(logging.DEBUG)
+logger.addHandler(stream_handler)
+
+# FileHandler
+file_handler = logging.FileHandler('output.log')
+file_handler.setLevel(level=logging.INFO)
+formatter = logging.Formatter('%(asctime)s -  %(name)s - %(levelname)s - %(message)s')
+logger.addHandler(file_handler)
+
+# HTTPHandler
+http_handler = HTTPHandler(host='localhost:8001', url='log', method='POST')
+logger.addHandler(http_handler)
+
+email_handler = SMTPHandler(mailhost=('smtp.163.com', 25),
+                            fromaddr='kaihou2018@163.com',
+                            toaddrs='kai.hou@yhouse.com',
+                            subject='python 脚本报错',
+                            credentials=('kaihou2018@163.com', 'women419'))  # 这里的密码是授权码，不是登陆密码
+email_handler.setLevel(logging.ERROR)
+logger.addHandler(email_handler)
+
+if __name__ == '__main__':
+    try:
+        a = 1/0
+    except:
+        logger.error('脚本出错', exc_info = True)  #exc_info 的值设置为True，邮件中出现正常的python报错信息，否则不显示
+    # Log
+    logger.info('This is a log info')
+    logger.debug('Debugging')
+    logger.warning('Warning exists')
+    logger.info('Finish')
+
+
+# 破解验证码
+from captcha.image import ImageCaptcha
+from PIL import Image
+
+text = 'it is me'
+image = ImageCaptcha()
+captcha = image.generate(text)
+captcha_image = Image.open(captcha)
+captcha_image.show()
 
 
 
