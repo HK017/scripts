@@ -92,9 +92,9 @@ tup1 = (1,)  #只有一个元素的要加上逗号才会为元组
 #更新和删除元组的元素
 temp= ('小甲鱼','黑夜','小不点')
 temp = temp[:2] + ('一点',) + temp[2:]   #拼接操作
-temp *8  
-in 
-not in 
+temp *8
+in
+not in
 ######################内置方法#########################
 #字符串和元组一样不能修改
 str1 = '  i love fishc.com   '
@@ -115,7 +115,7 @@ str1.rstrip()   #去掉右边的所有空格
 str1.replace('i','替换的字符')   #替换所有的i
 str1.split(' ')   #分割字符串,返回一个列表
 ##index和find的区别在于：如果找不到字符串,index将会引发一个异常（而不是返回-1）
-str1.index('i')   
+str1.index('i')
 str1.find('i')
 
 #字符串的格式化
@@ -127,9 +127,9 @@ str1.find('i')
 "{a} love {b}.{c}".format('i','fishc','com')   #报错
 
 "{a} love {b}.{c}".format(a= 'i',b = 'fishc',c = 'com')   #报错
- 
+
 #位置参数和关键字参数的混用，位置参数必须在关键字参数之前
-"{0} love {b}.{c}".format('i',b = 'fishc',c = 'com')   
+"{0} love {b}.{c}".format('i',b = 'fishc',c = 'com')
 
 "{0:0.1f}{1}".format(56.78,'GB')  #必须有位置参数民称
 
@@ -150,13 +150,13 @@ sum(numbels)
 sorted(numbels)
 
 enumerate(numbels)  #返回对象我们可以应用list强制转化为list
-list(enumerate(numbels)) 
+list(enumerate(numbels))
 
 a = [1,2,3,4,5,6,7,8]
 b = [4,5,6,7,8]
 
 list(zip(a,b))  #生成最小长度的list
- 
+
 zip_list = list(zip(a,b))  #生成最小长度的list
 zip_list.sort(key = lambda x:x[0],reverse = True)   #根据第一个位置降序
 zip_list.sort(key = lambda x:x[1],reverse = False)  #根据第一个位置升序
@@ -168,7 +168,7 @@ zip_list.sort(key = lambda x:x[1],reverse = False)  #根据第一个位置升序
 在函数内用外部变量调用的函数称为闭包
 def func(x):
     def funy(y):
-        return x * y 
+        return x * y
     return funy
 #调用
 i = func(5)
@@ -179,7 +179,7 @@ def funx():
     x = 5
     def funy():
         x *= x
-        return x 
+        return x
     return funy()
 funx()
 '这么调用报错'
@@ -192,7 +192,7 @@ def funx():
     x = [5]
     def funy():
         x[0] *= x[0]
-        return x 
+        return x
     return funy()
 funx()
 2.使用关键字nonlocal
@@ -202,7 +202,7 @@ def funx():
     def funy():
         nonlocal x
         x *= x
-        return x 
+        return x
     return funy()
 funx()
 
@@ -210,7 +210,7 @@ funx()
 def ds(x):
     return 2*x+1
 '''lambda的冒号前是参数，后面是函数的返回值'''
-lambda x:x*2+1  
+lambda x:x*2+1
 
 def add(x,y):
     return x+y
@@ -249,8 +249,8 @@ sys.setrecursionlimit(100)
 def jie_cheng(n):
     result = n
     for i in range(1,n):
-        result *= i 
-    return result 
+        result *= i
+    return result
 number = int(input('请输入一个整数:'))
 jie_cheng(number)
 2.递归版本
@@ -274,10 +274,10 @@ def fob(n):
     for i in range(2,n):
         result.append((a+b))
         a,b = b,a+b
-    return result,result[n-1] 
+    return result,result[n-1]
 number = int(input('请输入一个整数:'))
 sque, result= fob(number)
-result 
+result
 2.递归版本
 def fob1(n):
     if n == 1 or n == 2:
@@ -310,7 +310,7 @@ dict3 = {}
 dict3.fromkeys((1,2,3),'Number')
 dict3 = dict3.fromkeys(range(1,32),'赞')
 6.查找是否存在某个键
-in 
+in
 not in
 print(dict3.get(32,'木有这个键'))  #不存在32的键，打印木有这个键
 32 in dict3
@@ -342,8 +342,8 @@ list(set(l))           #用list会排序
 3.访问集合中的值
 一。用for循环
 for i in num2:
-    
-    
+
+
 
 二。可以通过in和not in判断一个元素是否在集合中
 1 in num2
@@ -375,7 +375,7 @@ f.read()
 f.close()
 3.文件指针
 f.tell()   #返回文件指针的位置
-f.seek(0,0)   #0表示从文件起始位置  1表示从当前位置  2 表示文件末尾 
+f.seek(0,0)   #0表示从文件起始位置  1表示从当前位置  2 表示文件末尾
 4.读取文件的每一行
 f = open('record.txt','r',encoding = 'utf8')
 for each_line in f:
@@ -403,7 +403,7 @@ f = open('record.txt','r',encoding = 'utf-8')
 boy = []
 girl = []
 #计数的count很重要
-count = 1  
+count = 1
 for each_line in f:
     if each_line.startswith('='):
         file_name_boy = 'boy_' + str(count) + '.txt'
@@ -439,7 +439,7 @@ girl_file.writelines(girl)
 boy_file.close()
 girl_file.close()
 f.close()
-       
+
 ####代码2
 def file_write(boy,girl,count):
     file_name_boy = 'boy_' + str(count) + '.txt'
@@ -456,7 +456,7 @@ def split_write(file_name):
     boy = []
     girl = []
     #计数的count很重要
-    count = 1  
+    count = 1
     f = open(file_name,'r',encoding = 'utf-8')
     for each_line in f:
         if each_line.startswith('='):
@@ -520,9 +520,9 @@ pickle_file.close()
 
 ############异常处理############
 my_list = ['a']
-assert len(my_list) > 0  
-AssertionError  assert 
-SyntaxError  
+assert len(my_list) > 0
+AssertionError  assert
+SyntaxError
 TypeError   1+'1'
 NameError
 OSError     没有文件
@@ -592,7 +592,7 @@ except OSError as reason:
     print(reason)
 finally:
     f.close()
-    
+
 
 try:
     with open('data.txt','w') as f:
@@ -607,18 +607,18 @@ import sys
 
 while 1:
     g.msgbox('这是我的第一个游戏界面！')
-    
-    
+
+
     msg = '请问你希望玩什么游戏？'
     title = '小游戏互动'
     choices = ['谈恋爱','学习c语言','打lol','看电视']
-    choice = g.choicebox(msg,title,choices)    
+    choice = g.choicebox(msg,title,choices)
     g.msgbox('你的选择是：' +str(choice),'结果')
-    
-    
+
+
     msg = '你希望重新开始小游戏吗？'
     title = '请选择：'
-    
+
     if g.ccbox(msg,title):    #show a continue/cancel gui
         pass
     else:
@@ -650,7 +650,7 @@ class Person:
     __name = '小甲鱼'
 p = Person()
 p.name
-p.__name 
+p.__name
 #以上两种调用方法都会报错，只能从内部方法中进行调用
 
 class Person:
@@ -675,7 +675,7 @@ c = Child()
 c.hello()
 #如果子类继承了父类，但子类hello方法会覆盖父类的hello方法
 class Child:
-    
+
     def hello(self):
         print('正在调用子类的方法...')
 c = Child()
@@ -758,20 +758,20 @@ isinstance(b,A)
 #检查一个对象是否有某种属性
 class C:
     def __init__(self,x=0):
-        self.x = x 
+        self.x = x
 c = C()
 hasattr(c,'x')      #c这个实例化对象是否有x这个属性
 getattr(c,'x')      #得到c的x属性的值
-getattr(c,'y','没有y这个属性') 
+getattr(c,'y','没有y这个属性')
 setattr(c,'y','fishc')   #设置属性
-getattr(c,'y') 
+getattr(c,'y')
 
 
 delattr(c,'z')  #删除属性
 
 1.可以直接赋值上不写size
 class C:
-    def __init__(self):    
+    def __init__(self):
         self.size = 10     #可以直接赋值上不写size
     def getsize(self):
             return self.size
@@ -782,8 +782,8 @@ class C:
 c = C()
 2.实例化时赋值
 class C:
-    def __init__(self,size):    
-        self.size = size     
+    def __init__(self,size):
+        self.size = size
     def getsize(self):
         return self.size
     def setsize(self,value):
@@ -793,8 +793,8 @@ class C:
 c = C(size =10)
 3.定义时进行初始化
 class C:
-    def __init__(self,size =10):    
-        self.size = size     
+    def __init__(self,size =10):
+        self.size = size
     def getsize(self):
         return self.size
     def setsize(self,value):
@@ -806,8 +806,8 @@ c = C()
 ####property
 
 class C:
-    def __init__(self,size = 10):    
-        self.size = size     
+    def __init__(self,size = 10):
+        self.size = size
     def getsize(self):
         return self.size
     def setsize(self,value):
@@ -896,7 +896,7 @@ a = [1,2,[3,4]]
 b = copy.copy(a)
 a[0] = 11
 a[2][0] = 333
-b 
+b
 3.copy.deepcopy
 e = copy.deepcopy(a)
 id(e[2]) == id(a[2])
@@ -922,10 +922,10 @@ a = np.empty([3,4])
 a = np.arange(10,20)
 a = np.arange(12).reshape([3,4])
 a = np.linspace(1,10,20)   #1-10的20个数
-a = np.linspace(1,10,20).reshape([4,5]) 
+a = np.linspace(1,10,20).reshape([4,5])
 '''numpy 基础计算'''
 a = np.array([10,20,30,40])
-b = np.arange(4) 
+b = np.arange(4)
 a-b
 a+b
 a ** 2
@@ -944,8 +944,8 @@ b[np.where(b<3)]
 '''列表中使用index方法'''
 
 arr=np.array([1,1,1,134,45,3,46,45,65,3,23424,234,12,12,3,546,1,2])
-np.where((arr>3) & (arr<100))         # 找出arr中大于3且小于100的索引  
-arr[np.where((arr>3) & (arr< 100))]   # 找出arr中大于3且小于100的值 
+np.where((arr>3) & (arr<100))         # 找出arr中大于3且小于100的索引
+arr[np.where((arr>3) & (arr< 100))]   # 找出arr中大于3且小于100的值
 '''三元操作符'''
 x if condition else y
 np.where(arr>3,1,0)  #满足条件返回1，否则返回0
@@ -953,9 +953,9 @@ np.unique([1,2,3,4,2,3])
 
 b = np.arange(4).reshape([2,2])
 '''生成0-1的随机数字'''
-a = np.random.random([2,4])   
+a = np.random.random([2,4])
 '''生成mean = 0,方差 = 1的2行4列服从正态分布的随机矩阵'''
-a1 = np.random.normal(0,1,[2,4])   
+a1 = np.random.normal(0,1,[2,4])
 np.sum(a1,axis = 0)   #列求和
 np.sum(a1,axis = 1)   #行求和
 np.min(a1)
@@ -1033,7 +1033,7 @@ np.hsplit(a1,2)
 
 '''numpy array 的copy 和 deepcopy'''
 a = np.arange(4)
-b =a 
+b =a
 c =a
 d =b
 a[0] = -1
@@ -1043,7 +1043,7 @@ b is a  #返回True，存在和列表一样的赋值原理
 ========想要赋值的话用copy
 b = a.copy()  #这就是deepcopy
 a[3] = 44
-b is a 
+b is a
 #################pandas###############
 import pandas as pd
 import numpy as np
@@ -1263,7 +1263,7 @@ df.sort_values(by = [0,1],ascending = True)     #按0这一列排
 df = pd.DataFrame(np.arange(20).reshape(5,4))
 sample = np.random.permutation(df.shape[0])
 #以下两种方法等价
-df.iloc[sample]  
+df.iloc[sample]
 df.take(sample)
 '''求数据框的行数'''
 len(df)
@@ -1327,7 +1327,7 @@ grouped2 = df.groupby(['key1'])['data1']
 for group_name,group_data in grouped1:
     print(group_name)
     print(group_data)
-    
+
 for group_name,group_data in grouped2:
     print(group_name)
     print(group_data)
@@ -1353,8 +1353,8 @@ print(df.groupby(['key1']).sum())      #非NA的和
 print(df.groupby(['key1']).mean())     #非NA的平均值
 print(df.groupby(['key1']).min())      #非NA的最小值
 print(df.groupby(['key1']).max())      #非NA的最大值
-print(df.groupby(['key1']).count())    #非NA的行数 
-print(df.groupby(['key1']).median())   #非NA的中位数 
+print(df.groupby(['key1']).count())    #非NA的行数
+print(df.groupby(['key1']).median())   #非NA的中位数
 print(df.groupby(['key1']).size())     #非NA的最小值
 print(df.groupby(['key1']).describe()) #非NA的最小值
 
@@ -1396,7 +1396,7 @@ object.join()
 #默认为outer连接，将两个数据框进行列名合并
 pd.concat()
 #np的竖直连接操作
-np.vstack()   
+np.vstack()
 #np的多维数组的
 np.stack()
 #横向连接
@@ -1412,11 +1412,11 @@ df = pd.DataFrame({'key1' : ['a', 'a', 'b', 'b', 'a'],
                    'data1' : np.random.randn(5),
                    'data2' : np.random.randn(5)})
 
-a = df.stack();a   
+a = df.stack();a
 2.unstack
 a = df.stack()
 type(a)                       #返回pandas.core.series.Series
-b = a.unstack()  
+b = a.unstack()
 type(b)                       #返回pandas.core.frame.DataFrame
 '''unstack方法将Series转化为DataFrame'''
 3.数据宽转长
@@ -1453,7 +1453,7 @@ plt.show()
 np.random.seed(2018)
 plt.figure(1,figsize = [14,8])
 x1 = np.linspace(-1,1,10)
-y1 = x1 ** 2 + 1 
+y1 = x1 ** 2 + 1
 y2 = x1 ** 3 + 1
 x_data = np.arange(0,10,dtype = np.int)
 y_data = np.random.uniform(0.1,0.7,size = 10)
@@ -1500,7 +1500,7 @@ zip(a,b)
 list(zip(a,b))
 for i,j in zip(a,b):
     print(i/2,j*2)
-    
+
 '''第二种方法'''
 import matplotlib.pyplot as plt
 fig = plt.figure()
@@ -1520,7 +1520,7 @@ ax1.hist(np.random.rand(100),bins = 20 ,color = '#ffff99',alpha = 0.3,ec = 'blac
 ax2.scatter(np.arange(30),np.arange(30)+3*np.random.randn(30))
 ax2.set_xlabel('x')
 ax1.set_title('x')
-fig.show()    
+fig.show()
 
 '''第三种方法'''
 fig,ax = plt.subplots(2,2)
@@ -1669,7 +1669,7 @@ frame.ix[frame['city'].str.find('ing') == -1,'panduan']  =  '无ing'
 #isin 等于多个值时使用
 frame.ix[frame.city.isin(['Guangzhou']),'panduan']  =  'Guangzhou'
 #使用正则表达式进行模糊匹配,*匹配0或无限次,?匹配0或1次
-df_obj[df_obj['套餐'].str.contains(r'.*?语音CDMA.*')] 
+df_obj[df_obj['套餐'].str.contains(r'.*?语音CDMA.*')]
 
 
 
@@ -1813,7 +1813,7 @@ for index,name in zip(range(1,len(set(data.国家))+1),set(data.国家)):
 for index,dataframe in data.groupby('国家'):
     for i in dataframe.index[:-1]:
         data.ix[i+1,'cha'] = data.ix[i,'GDP'] - data.ix[i+1,'GDP']
-        
+
 data.ix[data.cha.isna(),'cha'] = data['cha'].fillna(np.nan)
 
 
@@ -2066,9 +2066,31 @@ captcha_image.show()
 
 
 
+# 数据结构与算法
+# 快速排序  nlogn
+def partition(data, left, right):
+    temp = data[left]
+    while left != right:
+        while left < right and temp <= data[right]:
+            right -= 1
+        data[left] = data[right]
+        while left < right and temp >= data[left]:
+            left += 1
+        data[right] = data[left]
+    data[left] = temp
+    return  left
 
+def quick_sort(data, left, right):
+    if left < right:
+        mid = partition(data, left, right)
+        quick_sort(data, left, mid-1)
+        quick_sort(data, mid+1, right)
 
+import random
 
+data = list(range(1000))
+random.shuffle(data)
+quick_sort(data, 0, len(data)-1)
 
 
 

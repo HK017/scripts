@@ -1,0 +1,46 @@
+from sklearn.datasets import make_regression, make_classification   # 产生数据
+from sklearn.datasets import load_iris, load_boston                  # 加载库提供的数据target为label，data为数据
+# Adaboost,bagging,GBDT,RF
+from sklearn.ensemble import AdaBoostClassifier, BaggingClassifier, GradientBoostingClassifier, RandomForestClassifier
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer, HashingVectorizer
+from sklearn.feature_selection import SelectKBest, SelectFromModel, RFE, chi2
+
+from sklearn.linear_model import LogisticRegression   # 逻辑回归
+
+
+Regression metrics
+from sklearn.metrics import mean_squared_error
+
+Classification metrics
+# 精度，auc,roc曲线,f1分数，混淆矩阵,hinge_loss
+from sklearn.metrics import accuracy_score, auc, roc_curve, f1_score, confusion_matrix, precision_score, hinge_loss
+
+data
+from sklearn.model_selection import train_test_split, ShuffleSplit  # 分割数据,打乱切分数据
+# 数据集划分方法
+https: // www.cnblogs.com / hellcat / p / 7045585.html
+
+
+Hyper - parameter optimizers
+from sklearn.model_selection import GridSearchCV, cross_validate, learning_curve    # 网格搜索,交叉验证,学习曲线
+
+# 贝叶斯
+from sklearn.naive_bayes import GaussianNB  # Gaussian Naive Bayes
+
+# 决策树
+from sklearn.tree import DecisionTreeClassifier
+
+# KNN
+from sklearn.neighbors import KNeighborsClassifier
+
+# Kmeans
+from sklearn.cluster import KMeans
+
+# 数据预处理
+from sklearn.preprocessing import OneHotEncoder, MinMaxScaler, normalize, StandardScaler  # one-hot,幅度缩放,正则化，标准化
+
+# svm
+from sklearn.svm import SVC, SVR, LinearSVC, LinearSVR    # svc为分类，scr为回归,线性svc和线性svr
+
+# 打乱数据
+from sklearn.utils import shuffle
