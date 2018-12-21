@@ -38,6 +38,39 @@ dict1 = {'a':1,'b':2}
 list(dict1)
 pd.Series(dict1)
 
+
+######深拷贝和浅拷贝  https://www.cnblogs.com/work115/p/5619541.html
+# -*- config=utf-8 -*-
+#数据的拷贝
+a=[1,2,3,4,5,6,"a","C"];
+b=a;# a 与 b 的地址空间相同
+a.append("b");
+b.append("f");
+print(b,a);#[1, 2, 3, 4, 5, 6, 'a', 'C', 'b', 'f'] [1, 2, 3, 4, 5, 6, 'a', 'C', 'b', 'f'] 当改变a的时候b也变 改变b a也变
+print(id(b),id(a)); # 11075528 11075528 地址空间相同
+###############################################
+import copy;
+#拷贝就是对内存中数据的应用
+# 这就是浅拷贝
+list=[1,2,3,4,["a","b","c"]];
+list_1=copy.copy(list);
+print(list,list_1)
+print(id(list),id(list_1)); #11367752 10970440 地址空间不同 彼此的地址空间不同
+list.append("5");
+print(list,list_1);#[1, 2, 3, 4, ['a', 'b', 'c'], '5']  [1, 2, 3, 4, ['a', 'b', 'c']] list 改变 但 list_1 并没有变
+print(id(list[0]),id(list_1[0]));# 1394274096  1394274096 他们各自元素的地址空间还是相同的
+list[4].append("d");
+print(list,list_1);#[1, 2, 3, 4, ['a', 'b', 'c', 'd'], '5']  [1, 2, 3, 4, ['a', 'b', 'c', 'd']] 都变了
+
+# 深拷贝
+list_2=[1,2,3,4,["a","b","c"]];
+list_3=copy.deepcopy(list_2);
+print(id(list_2),id(list_3));#17402824 17402248 地址不同
+print(id(list_2[4]),id(list_3[4])); #11241032 11242056  地址不同
+list_2[4].append("d");
+print(list_2,list_3);#[1, 2, 3, 4, ['a', 'b', 'c', 'd']] [1, 2, 3, 4, ['a', 'b', 'c']]  list_3 没改变
+
+
 ##########################################################黑马程序元的笔记###############################
 python2.x和python3.x的数据类型唯一的区别在于int
 python2.x中 有int（2 ** 32）和long(2 ** 64 输出时会加上L在末尾)
