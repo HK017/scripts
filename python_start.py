@@ -2381,8 +2381,7 @@ import matplotlib.pyplot as plt
 
 from sklearn.datasets import make_classification
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import (RandomTreesEmbedding, RandomForestClassifier,
-                              GradientBoostingClassifier)
+from sklearn.ensemble import (RandomTreesEmbedding, RandomForestClassifier,GradientBoostingClassifier)
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve
@@ -2396,12 +2395,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5)
 # of the training data than the linear regression model to avoid
 # overfitting, in particular if the total number of leaves is
 # similar to the number of training samples
-X_train, X_train_lr, y_train, y_train_lr = train_test_split(
-    X_train, y_train, test_size=0.5)
+X_train, X_train_lr, y_train, y_train_lr = train_test_split(X_train, y_train, test_size=0.5)
 
 # Unsupervised transformation based on totally random trees
-rt = RandomTreesEmbedding(max_depth=3, n_estimators=n_estimator,
-                          random_state=0)
+rt = RandomTreesEmbedding(max_depth=3, n_estimators=n_estimator,random_state=0)
 
 rt_lm = LogisticRegression(solver='lbfgs', max_iter=1000)
 pipeline = make_pipeline(rt, rt_lm)
@@ -2467,4 +2464,3 @@ plt.ylabel('True positive rate')
 plt.title('ROC curve (zoomed in at top left)')
 plt.legend(loc='best')
 plt.show()
-
