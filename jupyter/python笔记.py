@@ -50,12 +50,12 @@ import glob
 for name in glob.glob('dir/*'):
     print(name)
 输出：
-dir / file.txt
-dir / file1.txt
-dir / file2.txt
-dir / filea.txt
-dir / fileb.txt
-dir / subdir
+dir/file.txt
+dir/file1.txt
+dir/file2.txt
+dir/filea.txt
+dir/fileb.txt
+dir/subdir
 
 列出子目录中的文件，必须在模式中包括子目录名：
 
@@ -105,11 +105,11 @@ from PIL import Image
 # sys库
 import sys     # 通用工具脚本经常调用命令行参数
 例如在命令行中执行 "python demo.py one two three" 后可以得到以下输出结果:
->> > import sys
->> > print(sys.argv)
+>>> import sys
+>>> print(sys.argv)
 ['demo.py', 'one', 'two', 'three']
->> > arg = sys.argv[0]
->> > print(arg)
+>>> arg = sys.argv[0]
+>>> print(arg)
 one
 
 

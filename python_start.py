@@ -2386,6 +2386,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve
 from sklearn.pipeline import make_pipeline
+from sklearn.metrics import auc
 
 n_estimator = 10
 X, y = make_classification(n_samples=80000)
@@ -2404,7 +2405,7 @@ rt_lm = LogisticRegression(solver='lbfgs', max_iter=1000)
 pipeline = make_pipeline(rt, rt_lm)
 pipeline.fit(X_train, y_train)
 y_pred_rt = pipeline.predict_proba(X_test)[:, 1]
-fpr_rt_lm, tpr_rt_lm, _ = roc_curve(y_test, y_pred_rt)
+fpr_rt_lm, tpr_rt_lm, threshold = roc_curve(y_test, y_pred_rt)
 
 # Supervised transformation based on random forests
 rf = RandomForestClassifier(max_depth=3, n_estimators=n_estimator)

@@ -22,4 +22,3 @@ output = tf.multiply(input1, input2)
 with tf.Session() as s:
     # feed 数据以字典传入
     print(s.run(output, feed_dict={input1:[7.], input2:[3]}))
-    

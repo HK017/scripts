@@ -15,7 +15,7 @@ def get_info(file_path):
     CountryCode_list = []
 
     with open(file_path, 'r', encoding='utf-8') as f:
-        file = json.load(f)
+        file = json.load(f)   #load 是针对json文件的，loads是针对字符串的函数
 
     lists = file['Success']['Cities']
 
