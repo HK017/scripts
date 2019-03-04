@@ -69,10 +69,23 @@ def quick_sort(data):
 
         return quick_sort(smaller) + [data[0]] + quick_sort(larger)
 
+# 冒泡    n2
+# 选择    n2
+# 插入    n2
+# 希尔    nlogn
+# 归并    nlogn
+# 快速    nlogn
+# 堆      nlogn
+# 计数排序 n+k
+# 桶排序   n+k
+# 基数排序 nxk
+
+
+
 if __name__ == '__main__':
     random.seed(0)
-    l = random.sample(range(1,10001),1000)  # 生成1,1000的20个不重复的随机数
+    l = random.sample(range(1,11),10)  # 生成1,1000的20个不重复的随机数
     print('排序之前:',l)
     a = quick_sort(l)
-    print('排序之后:', l)
+    print('排序之后:', a)
 
