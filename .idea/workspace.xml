@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e324ace-fdb2-4d7c-be0a-305d0c39aaa2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tensorflow/tf.app.flags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter/python笔记.py" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter/python笔记.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jupyter/time模块.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/jupyter/time模块.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_json.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_json.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parse_uid.py" beforeDir="false" afterPath="$PROJECT_DIR$/parse_uid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/python_start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spider/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/starbucks.py" beforeDir="false" afterPath="$PROJECT_DIR$/starbucks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/Fetch和Feed.py" beforeDir="false" afterPath="$PROJECT_DIR$/tensorflow/Fetch和Feed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/统计连续核销次数.py" beforeDir="false" afterPath="$PROJECT_DIR$/统计连续核销次数.py" afterDir="false" />
-    </list>
+    <list default="true" id="8e324ace-fdb2-4d7c-be0a-305d0c39aaa2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +76,7 @@
     <session id="169312037">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.127" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.19" value="1" />
@@ -105,12 +93,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="427" />
-          <entry key="py" value="4179" />
+          <entry key="py" value="4183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="4606" />
+          <entry key="Python" value="4610" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -170,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/去水印.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -226,7 +214,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="136" />
     <option name="y" value="110" />
     <option name="width" value="1936" />
@@ -479,7 +467,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.15245202" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.15245202" />
       <window_info id="Structure" order="1" sideWeight="0.50067294" side_tool="true" weight="0.1380597" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -493,7 +481,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49946696" weight="0.32952183" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026652" side_tool="true" weight="0.2827443" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49840087" visible="true" weight="0.39696312" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49840087" visible="true" weight="0.39696312" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49733475" weight="0.29035753" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -824,7 +812,7 @@
     <entry file="file://$PROJECT_DIR$/去水印.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+          <caret line="1" column="31" lean-forward="true" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
