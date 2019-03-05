@@ -88,4 +88,5 @@ if __name__ == '__main__':
     print('排序之前:',l)
     a = quick_sort(l)
     print('排序之后:', a)
-
+    import sys
+    print(sys.path)
