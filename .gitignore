@@ -1,0 +1,25 @@
+# windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# os x
+.DS_Store
+
+# pycharm
+.idea
+
+# python
+__pycache__
+
+# test
+test
+
+# work files
+work
+
+# temp file
+temp
+
+# test
+test
