@@ -1,13 +1,13 @@
 import tensorflow as tf
 
 
-def Conv_layer(input, filter, kernel, stride, pddding, activation, scope):
+def Conv_layer(input, filter, kernel, stride, padding, activation, scope):
     with tf.variable_scope(scope):
         return tf.layers.conv2d(inputs=input,
                                 filters=filter,
                                 kernel_size=kernel,
                                 strides=stride,
-                                padding=pddding,
+                                padding=padding,
                                 activation=activation,
                                 use_bias=False)
 
